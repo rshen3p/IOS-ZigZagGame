@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet var GameView: UIView!
     @IBOutlet weak var Ball: UIImageView!
     @IBOutlet weak var GameOver: UIImageView!
-    @IBOutlet weak var Logo: UIImageView!
     @IBOutlet weak var Retry: UIButton!
     @IBOutlet weak var ScoreBoard: UIImageView!
     @IBOutlet weak var Play: UIButton!
+    @IBOutlet weak var Logo: UILabel!
     
     @IBOutlet weak var PillarTop: UIImageView!
     @IBOutlet weak var PillarTop2: UIImageView!
@@ -64,6 +64,9 @@ class ViewController: UIViewController {
     var PillarTopCenter: CGPoint?
     var PillarTop2Center: CGPoint?
     var PillarTop3Center: CGPoint?
+    var PillarTop4Center: CGPoint?
+    var PillarTop5Center: CGPoint?
+    var PillarTop6Center: CGPoint?
     var Pillar1Center: CGPoint?
     var Pillar2Center: CGPoint?
     var Pillar3Center: CGPoint?
@@ -91,9 +94,14 @@ class ViewController: UIViewController {
     var Pillar25Center: CGPoint?
     var Pillar26Center: CGPoint?
     
+    var Score: Int = 0
+    var HighScore: Int = 0
+    let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     
     @IBAction func Retry(sender: AnyObject) {
+        self.viewDidLoad()
+        self.Play(Play)
     }
     
     
@@ -106,14 +114,19 @@ class ViewController: UIViewController {
         self.Retry.hidden = true
         self.ScoreBoard.hidden = true
         self.Play.hidden = true
-        self.Logo.hidden = true
         self.Ball.hidden = false
-        
+        self.ScoreOnBoard.hidden = true
+        self.HightestScoreOnBoard.hidden = true
+        self.ScoreLabel.hidden = false
+        self.Logo.hidden = true
         
         self.Ball.center.x = 178.0
         self.Ball.center.y = 390.0
         self.Pillar1.center = CGPointMake(175.0,436.0)
         self.Pillar2.center = CGPointMake(214.0,407.0)
+        self.PillarTop2.center = CGPointMake(Pillar1.center.x, Pillar1.center.y - 35 )
+        self.PillarTop3.center = CGPointMake(Pillar2.center.x, Pillar2.center.y - 35 )
+        
         
         timer = NSTimer.scheduledTimerWithTimeInterval(0.045, target: self, selector: Selector("movement"), userInfo: nil, repeats: true)
         
@@ -210,6 +223,7 @@ class ViewController: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
         if TapsValid == true {
+            Score++
             if BallRight == true {
                 BallChange = false
             } else {
@@ -220,6 +234,8 @@ class ViewController: UIViewController {
     
     //Controls the ball and pillar movememnt
     func movement(){
+        
+        self.ScoreLabel.text = String(Score)
         
         BallCenter = self.Ball.center
         Pillar1Center = self.Pillar1.center
@@ -248,6 +264,13 @@ class ViewController: UIViewController {
         Pillar24Center = self.Pillar24.center
         Pillar25Center = self.Pillar25.center
         Pillar26Center = self.Pillar26.center
+        
+        PillarTopCenter = self.PillarTop.center
+        PillarTop2Center = self.PillarTop2.center
+        PillarTop3Center = self.PillarTop3.center
+        PillarTop4Center = self.PillarTop4.center
+        PillarTop5Center = self.PillarTop5.center
+        PillarTop6Center = self.PillarTop6.center
         
         if BallChange == false {
             BallRight = false
@@ -317,14 +340,151 @@ class ViewController: UIViewController {
         Pillar24.center = movePillarUp(Pillar24.center.x, floaty: Pillar24.center.y, pillarNumber: 24)
         Pillar25.center = movePillarUp(Pillar25.center.x, floaty: Pillar25.center.y, pillarNumber: 25)
         Pillar26.center = movePillarUp(Pillar26.center.x, floaty: Pillar26.center.y, pillarNumber: 26)
+        
+        if (((Ball.center.x > PillarTop.center.x - 50) && (Ball.center.x < PillarTop.center.x + 50) &&
+            (Ball.center.y > PillarTop.center.y - 45) && (Ball.center.y < PillarTop.center.y + 45)) ||
+            ((Ball.center.x > PillarTop2.center.x - 50) && (Ball.center.x < PillarTop2.center.x + 50) &&
+            (Ball.center.y > PillarTop2.center.y - 45) && (Ball.center.y < PillarTop2.center.y + 45))  ||
+            ((Ball.center.x > PillarTop3.center.x - 50) && (Ball.center.x < PillarTop3.center.x + 50) &&
+            (Ball.center.y > PillarTop3.center.y - 45) && (Ball.center.y < PillarTop3.center.y + 45))  ||
+            ((Ball.center.x > PillarTop4.center.x - 50) && (Ball.center.x < PillarTop4.center.x + 50) &&
+            (Ball.center.y > PillarTop4.center.y - 45) && (Ball.center.y < PillarTop4.center.y + 45))  ||
+            ((Ball.center.x > PillarTop5.center.x - 50) && (Ball.center.x < PillarTop5.center.x + 50) &&
+            (Ball.center.y > PillarTop5.center.y - 45) && (Ball.center.y < PillarTop5.center.y + 45))  ||
+            ((Ball.center.x > PillarTop6.center.x - 50) && (Ball.center.x < PillarTop6.center.x + 50) &&
+            (Ball.center.y > PillarTop6.center.y - 45) && (Ball.center.y < PillarTop6.center.y + 45))) {
+            
+        } else {
+            gameOver()
+        }
+        
+        if CGRectIntersectsRect(Ball.frame, Pillar1.frame){
+            self.PillarTop.center = CGPointMake(Pillar26.center.x, Pillar26.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar1.center.x, Pillar1.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar2.center.x, Pillar2.center.y - 35)
+            self.PillarTop4.center = CGPointMake(Pillar25.center.x, Pillar25.center.y - 35)
+            self.PillarTop5.center = CGPointMake(Pillar24.center.x, Pillar24.center.y - 35)
+            self.PillarTop6.center = CGPointMake(Pillar23.center.x, Pillar23.center.y - 35)
+           
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar2.frame)){
+            self.PillarTop.center = CGPointMake(Pillar1.center.x, Pillar1.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar2.center.x, Pillar2.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar3.center.x, Pillar3.center.y - 35)
+            self.PillarTop4.center = CGPointMake(Pillar26.center.x, Pillar26.center.y - 35)
+            self.PillarTop5.center = CGPointMake(Pillar25.center.x, Pillar25.center.y - 35)
+            self.PillarTop6.center = CGPointMake(Pillar24.center.x, Pillar24.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar3.frame)){
+            self.PillarTop4.hidden = true
+            self.PillarTop5.hidden = true
+            self.PillarTop6.hidden = true
+            self.PillarTop.center = CGPointMake(Pillar2.center.x, Pillar2.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar3.center.x, Pillar3.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar4.center.x, Pillar4.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar4.frame)){
+            self.PillarTop.center = CGPointMake(Pillar3.center.x, Pillar3.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar4.center.x, Pillar4.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar5.center.x, Pillar5.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar5.frame)){
+            self.PillarTop.center = CGPointMake(Pillar4.center.x, Pillar4.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar5.center.x, Pillar5.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar6.center.x, Pillar6.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar6.frame)){
+            self.PillarTop.center = CGPointMake(Pillar5.center.x, Pillar5.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar6.center.x, Pillar6.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar7.center.x, Pillar7.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar7.frame)){
+            self.PillarTop.center = CGPointMake(Pillar6.center.x, Pillar6.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar7.center.x, Pillar7.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar8.center.x, Pillar8.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar8.frame)){
+            self.PillarTop.center = CGPointMake(Pillar7.center.x, Pillar7.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar8.center.x, Pillar8.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar9.center.x, Pillar9.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar9.frame)){
+            self.PillarTop.center = CGPointMake(Pillar8.center.x, Pillar8.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar9.center.x, Pillar9.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar10.center.x, Pillar10.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar10.frame)){
+            self.PillarTop.center = CGPointMake(Pillar9.center.x, Pillar9.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar10.center.x, Pillar10.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar11.center.x, Pillar11.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar11.frame)){
+            self.PillarTop.center = CGPointMake(Pillar10.center.x, Pillar10.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar11.center.x, Pillar11.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar12.center.x, Pillar12.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar12.frame)){
+            self.PillarTop.center = CGPointMake(Pillar11.center.x, Pillar11.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar12.center.x, Pillar12.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar13.center.x, Pillar13.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar13.frame)){
+            self.PillarTop.center = CGPointMake(Pillar12.center.x, Pillar12.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar13.center.x, Pillar13.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar14.center.x, Pillar14.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar14.frame)){
+            self.PillarTop.center = CGPointMake(Pillar13.center.x, Pillar13.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar14.center.x, Pillar14.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar15.center.x, Pillar15.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar15.frame)){
+            self.PillarTop.center = CGPointMake(Pillar14.center.x, Pillar14.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar15.center.x, Pillar15.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar16.center.x, Pillar16.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar16.frame)){
+            self.PillarTop.center = CGPointMake(Pillar15.center.x, Pillar15.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar16.center.x, Pillar16.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar17.center.x, Pillar17.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar17.frame)){
+            self.PillarTop.center = CGPointMake(Pillar16.center.x, Pillar16.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar17.center.x, Pillar17.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar18.center.x, Pillar18.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar18.frame)){
+            self.PillarTop.center = CGPointMake(Pillar17.center.x, Pillar17.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar18.center.x, Pillar18.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar19.center.x, Pillar19.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar19.frame)){
+            self.PillarTop.center = CGPointMake(Pillar18.center.x, Pillar18.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar19.center.x, Pillar19.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar20.center.x, Pillar20.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar20.frame)){
+            self.PillarTop.center = CGPointMake(Pillar19.center.x, Pillar19.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar20.center.x, Pillar20.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar21.center.x, Pillar21.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar21.frame)){
+            self.PillarTop.center = CGPointMake(Pillar20.center.x, Pillar20.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar21.center.x, Pillar21.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar22.center.x, Pillar22.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar22.frame)){
+            self.PillarTop.center = CGPointMake(Pillar21.center.x, Pillar21.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar22.center.x, Pillar22.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar23.center.x, Pillar23.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar23.frame)){
+            self.PillarTop.center = CGPointMake(Pillar22.center.x, Pillar22.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar23.center.x, Pillar23.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar24.center.x, Pillar24.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar24.frame)){
+            self.PillarTop.center = CGPointMake(Pillar23.center.x, Pillar23.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar24.center.x, Pillar24.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar25.center.x, Pillar25.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar25.frame)){
+            self.PillarTop.center = CGPointMake(Pillar24.center.x, Pillar24.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar25.center.x, Pillar25.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar26.center.x, Pillar26.center.y - 35)
+        } else if(CGRectIntersectsRect(Ball.frame, Pillar26.frame)){
+            self.PillarTop.center = CGPointMake(Pillar25.center.x, Pillar25.center.y - 35)
+            self.PillarTop2.center = CGPointMake(Pillar26.center.x, Pillar26.center.y - 35)
+            self.PillarTop3.center = CGPointMake(Pillar1.center.x, Pillar1.center.y - 35)
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Score = 0
+        HighScore = defaults.integerForKey("HighScore")
+        
         self.GameOver.hidden = true
         self.Retry.hidden = true
         self.ScoreBoard.hidden = true
         self.Ball.hidden = true
+        self.Logo.hidden = false
         
         self.Pillar1.hidden = true
         self.Pillar2.hidden = true
@@ -360,7 +520,10 @@ class ViewController: UIViewController {
         self.PillarTop5.hidden = true
         self.PillarTop6.hidden = true
         self.Play.hidden = false
-        self.Logo.hidden = false
+        
+        self.ScoreOnBoard.hidden = true
+        self.HightestScoreOnBoard.hidden = true
+        self.ScoreLabel.hidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -576,6 +739,72 @@ class ViewController: UIViewController {
         if let newPillar26Center = Pillar26Center {
             self.Pillar26.center = newPillar26Center
         }
+        if let newPillarTopCenter = PillarTopCenter {
+            self.PillarTop.center = newPillarTopCenter
+        }
+        if let newPillarTop2Center = PillarTop2Center {
+            self.PillarTop2.center = newPillarTop2Center
+        }
+        if let newPillarTop3Center = PillarTop3Center {
+            self.PillarTop3.center = newPillarTop3Center
+        }
+        if let newPillarTop4Center = PillarTop4Center {
+            self.PillarTop4.center = newPillarTop4Center
+        }
+        if let newPillarTop5Center = PillarTop5Center {
+            self.PillarTop5.center = newPillarTop5Center
+        }
+        if let newPillarTop6Center = PillarTop6Center {
+            self.PillarTop6.center = newPillarTop6Center
+        }
+    }
+    
+    //handles game over situations
+    func gameOver() {
+        TapsValid = false
+        timer.invalidate()
+        ScoreLabel.hidden = true
+        GameOver.hidden = false
+        Retry.hidden = false
+        ScoreBoard.hidden = false
+        Logo.hidden = true
+        
+        if Score > HighScore {
+            HighScore = Score
+        }
+        defaults.setInteger(HighScore, forKey: "HighScore")
+        self.ScoreOnBoard.text = String(Score)
+        self.HightestScoreOnBoard.text = String(HighScore)
+        
+        ScoreOnBoard.hidden = false
+        HightestScoreOnBoard.hidden = false
+        
+        GameView.sendSubviewToBack(Pillar1)
+        GameView.sendSubviewToBack(Pillar2)
+        GameView.sendSubviewToBack(Pillar3)
+        GameView.sendSubviewToBack(Pillar4)
+        GameView.sendSubviewToBack(Pillar5)
+        GameView.sendSubviewToBack(Pillar6)
+        GameView.sendSubviewToBack(Pillar7)
+        GameView.sendSubviewToBack(Pillar8)
+        GameView.sendSubviewToBack(Pillar9)
+        GameView.sendSubviewToBack(Pillar10)
+        GameView.sendSubviewToBack(Pillar11)
+        GameView.sendSubviewToBack(Pillar12)
+        GameView.sendSubviewToBack(Pillar13)
+        GameView.sendSubviewToBack(Pillar14)
+        GameView.sendSubviewToBack(Pillar15)
+        GameView.sendSubviewToBack(Pillar16)
+        GameView.sendSubviewToBack(Pillar17)
+        GameView.sendSubviewToBack(Pillar18)
+        GameView.sendSubviewToBack(Pillar19)
+        GameView.sendSubviewToBack(Pillar20)
+        GameView.sendSubviewToBack(Pillar21)
+        GameView.sendSubviewToBack(Pillar22)
+        GameView.sendSubviewToBack(Pillar23)
+        GameView.sendSubviewToBack(Pillar24)
+        GameView.sendSubviewToBack(Pillar25)
+        GameView.sendSubviewToBack(Pillar26)
     }
 
 
