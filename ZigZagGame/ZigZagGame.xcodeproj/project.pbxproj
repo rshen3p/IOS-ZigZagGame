@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBED6F4A1C891A8900D7EC78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED6F491C891A8900D7EC78 /* AppDelegate.swift */; };
+		EBED6F4C1C891A8900D7EC78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED6F4B1C891A8900D7EC78 /* ViewController.swift */; };
+		EBED6F4F1C891A8900D7EC78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBED6F4D1C891A8900D7EC78 /* Main.storyboard */; };
+		EBED6F511C891A8900D7EC78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBED6F501C891A8900D7EC78 /* Assets.xcassets */; };
+		EBED6F541C891A8900D7EC78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBED6F521C891A8900D7EC78 /* LaunchScreen.storyboard */; };
+		EBED6F5F1C891A8A00D7EC78 /* ZigZagGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED6F5E1C891A8A00D7EC78 /* ZigZagGameTests.swift */; };
+		EBED6F6A1C891A8A00D7EC78 /* ZigZagGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBED6F691C891A8A00D7EC78 /* ZigZagGameUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBED6F5B1C891A8A00D7EC78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBED6F3E1C891A8900D7EC78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBED6F451C891A8900D7EC78;
+			remoteInfo = ZigZagGame;
+		};
+		EBED6F661C891A8A00D7EC78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBED6F3E1C891A8900D7EC78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBED6F451C891A8900D7EC78;
+			remoteInfo = ZigZagGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBED6F461C891A8900D7EC78 /* ZigZagGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZigZagGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBED6F491C891A8900D7EC78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBED6F4B1C891A8900D7EC78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBED6F4E1C891A8900D7EC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBED6F501C891A8900D7EC78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBED6F531C891A8900D7EC78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBED6F551C891A8900D7EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBED6F5A1C891A8A00D7EC78 /* ZigZagGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZigZagGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBED6F5E1C891A8A00D7EC78 /* ZigZagGameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigZagGameTests.swift; sourceTree = "<group>"; };
+		EBED6F601C891A8A00D7EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBED6F651C891A8A00D7EC78 /* ZigZagGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZigZagGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBED6F691C891A8A00D7EC78 /* ZigZagGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigZagGameUITests.swift; sourceTree = "<group>"; };
+		EBED6F6B1C891A8A00D7EC78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBED6F431C891A8900D7EC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBED6F571C891A8A00D7EC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBED6F621C891A8A00D7EC78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBED6F3D1C891A8900D7EC78 = {
+			isa = PBXGroup;
+			children = (
+				EBED6F481C891A8900D7EC78 /* ZigZagGame */,
+				EBED6F5D1C891A8A00D7EC78 /* ZigZagGameTests */,
+				EBED6F681C891A8A00D7EC78 /* ZigZagGameUITests */,
+				EBED6F471C891A8900D7EC78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBED6F471C891A8900D7EC78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBED6F461C891A8900D7EC78 /* ZigZagGame.app */,
+				EBED6F5A1C891A8A00D7EC78 /* ZigZagGameTests.xctest */,
+				EBED6F651C891A8A00D7EC78 /* ZigZagGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBED6F481C891A8900D7EC78 /* ZigZagGame */ = {
+			isa = PBXGroup;
+			children = (
+				EBED6F491C891A8900D7EC78 /* AppDelegate.swift */,
+				EBED6F4B1C891A8900D7EC78 /* ViewController.swift */,
+				EBED6F4D1C891A8900D7EC78 /* Main.storyboard */,
+				EBED6F501C891A8900D7EC78 /* Assets.xcassets */,
+				EBED6F521C891A8900D7EC78 /* LaunchScreen.storyboard */,
+				EBED6F551C891A8900D7EC78 /* Info.plist */,
+			);
+			path = ZigZagGame;
+			sourceTree = "<group>";
+		};
+		EBED6F5D1C891A8A00D7EC78 /* ZigZagGameTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBED6F5E1C891A8A00D7EC78 /* ZigZagGameTests.swift */,
+				EBED6F601C891A8A00D7EC78 /* Info.plist */,
+			);
+			path = ZigZagGameTests;
+			sourceTree = "<group>";
+		};
+		EBED6F681C891A8A00D7EC78 /* ZigZagGameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBED6F691C891A8A00D7EC78 /* ZigZagGameUITests.swift */,
+				EBED6F6B1C891A8A00D7EC78 /* Info.plist */,
+			);
+			path = ZigZagGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBED6F451C891A8900D7EC78 /* ZigZagGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBED6F6E1C891A8A00D7EC78 /* Build configuration list for PBXNativeTarget "ZigZagGame" */;
+			buildPhases = (
+				EBED6F421C891A8900D7EC78 /* Sources */,
+				EBED6F431C891A8900D7EC78 /* Frameworks */,
+				EBED6F441C891A8900D7EC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZigZagGame;
+			productName = ZigZagGame;
+			productReference = EBED6F461C891A8900D7EC78 /* ZigZagGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBED6F591C891A8A00D7EC78 /* ZigZagGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBED6F711C891A8A00D7EC78 /* Build configuration list for PBXNativeTarget "ZigZagGameTests" */;
+			buildPhases = (
+				EBED6F561C891A8A00D7EC78 /* Sources */,
+				EBED6F571C891A8A00D7EC78 /* Frameworks */,
+				EBED6F581C891A8A00D7EC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBED6F5C1C891A8A00D7EC78 /* PBXTargetDependency */,
+			);
+			name = ZigZagGameTests;
+			productName = ZigZagGameTests;
+			productReference = EBED6F5A1C891A8A00D7EC78 /* ZigZagGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBED6F641C891A8A00D7EC78 /* ZigZagGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBED6F741C891A8A00D7EC78 /* Build configuration list for PBXNativeTarget "ZigZagGameUITests" */;
+			buildPhases = (
+				EBED6F611C891A8A00D7EC78 /* Sources */,
+				EBED6F621C891A8A00D7EC78 /* Frameworks */,
+				EBED6F631C891A8A00D7EC78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBED6F671C891A8A00D7EC78 /* PBXTargetDependency */,
+			);
+			name = ZigZagGameUITests;
+			productName = ZigZagGameUITests;
+			productReference = EBED6F651C891A8A00D7EC78 /* ZigZagGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBED6F3E1C891A8900D7EC78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Ricky Chen";
+				TargetAttributes = {
+					EBED6F451C891A8900D7EC78 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = GKRFZ2DUEG;
+					};
+					EBED6F591C891A8A00D7EC78 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = EBED6F451C891A8900D7EC78;
+					};
+					EBED6F641C891A8A00D7EC78 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = EBED6F451C891A8900D7EC78;
+					};
+				};
+			};
+			buildConfigurationList = EBED6F411C891A8900D7EC78 /* Build configuration list for PBXProject "ZigZagGame" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBED6F3D1C891A8900D7EC78;
+			productRefGroup = EBED6F471C891A8900D7EC78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBED6F451C891A8900D7EC78 /* ZigZagGame */,
+				EBED6F591C891A8A00D7EC78 /* ZigZagGameTests */,
+				EBED6F641C891A8A00D7EC78 /* ZigZagGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBED6F441C891A8900D7EC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBED6F541C891A8900D7EC78 /* LaunchScreen.storyboard in Resources */,
+				EBED6F511C891A8900D7EC78 /* Assets.xcassets in Resources */,
+				EBED6F4F1C891A8900D7EC78 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBED6F581C891A8A00D7EC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBED6F631C891A8A00D7EC78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBED6F421C891A8900D7EC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBED6F4C1C891A8900D7EC78 /* ViewController.swift in Sources */,
+				EBED6F4A1C891A8900D7EC78 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBED6F561C891A8A00D7EC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBED6F5F1C891A8A00D7EC78 /* ZigZagGameTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBED6F611C891A8A00D7EC78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBED6F6A1C891A8A00D7EC78 /* ZigZagGameUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBED6F5C1C891A8A00D7EC78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBED6F451C891A8900D7EC78 /* ZigZagGame */;
+			targetProxy = EBED6F5B1C891A8A00D7EC78 /* PBXContainerItemProxy */;
+		};
+		EBED6F671C891A8A00D7EC78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBED6F451C891A8900D7EC78 /* ZigZagGame */;
+			targetProxy = EBED6F661C891A8A00D7EC78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EBED6F4D1C891A8900D7EC78 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBED6F4E1C891A8900D7EC78 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBED6F521C891A8900D7EC78 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBED6F531C891A8900D7EC78 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBED6F6C1C891A8A00D7EC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBED6F6D1C891A8A00D7EC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBED6F6F1C891A8A00D7EC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ZigZagGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.ZigZagGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EBED6F701C891A8A00D7EC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = ZigZagGame/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.ZigZagGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		EBED6F721C891A8A00D7EC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZigZagGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.ZigZagGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZigZagGame.app/ZigZagGame";
+			};
+			name = Debug;
+		};
+		EBED6F731C891A8A00D7EC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZigZagGameTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.ZigZagGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZigZagGame.app/ZigZagGame";
+			};
+			name = Release;
+		};
+		EBED6F751C891A8A00D7EC78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZigZagGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.ZigZagGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZigZagGame;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		EBED6F761C891A8A00D7EC78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZigZagGameUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.BCIT.COMP4977.ZigZagGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZigZagGame;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBED6F411C891A8900D7EC78 /* Build configuration list for PBXProject "ZigZagGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBED6F6C1C891A8A00D7EC78 /* Debug */,
+				EBED6F6D1C891A8A00D7EC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBED6F6E1C891A8A00D7EC78 /* Build configuration list for PBXNativeTarget "ZigZagGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBED6F6F1C891A8A00D7EC78 /* Debug */,
+				EBED6F701C891A8A00D7EC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EBED6F711C891A8A00D7EC78 /* Build configuration list for PBXNativeTarget "ZigZagGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBED6F721C891A8A00D7EC78 /* Debug */,
+				EBED6F731C891A8A00D7EC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		EBED6F741C891A8A00D7EC78 /* Build configuration list for PBXNativeTarget "ZigZagGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBED6F751C891A8A00D7EC78 /* Debug */,
+				EBED6F761C891A8A00D7EC78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EBED6F3E1C891A8900D7EC78 /* Project object */;
+}
